@@ -1,23 +1,22 @@
 {
-    "importedFrom": "file:///home/test/MPLABProjects/same54cu_tcp_datastream/same54_cu_tcpip/firmware/same54_cu_tcpip.X",
-    "version": "1.0",
+    "importedFrom": "file:///c:/Users/A69614/Documents/MPLABExtensionsTest/same54cu_tcp_datastream/same54_cu_tcpip/firmware/same54_cu_tcpip.X",
+    "version": "1.1",
     "configurations": [
         {
             "name": "default",
             "id": "conf1",
             "targetDevice": "ATSAME54P20A",
             "imageType": "application",
-            "platformTool": "default-edbg",
             "packs": [
-                {
-                    "name": "CMSIS",
-                    "vendor": "ARM",
-                    "version": "5.8.0"
-                },
                 {
                     "name": "SAME54_DFP",
                     "vendor": "Microchip",
                     "version": "3.7.122"
+                },
+                {
+                    "name": "CMSIS",
+                    "vendor": "ARM",
+                    "version": "5.8.0"
                 }
             ],
             "fileSet": "root",
@@ -32,19 +31,49 @@
     ],
     "propertyGroups": [
         {
+            "name": "default-XC32",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32-toolchain@4.40",
+            "properties": {
+                "compiler": "default-C32",
+                "compiler++": "default-C32CPP",
+                "assembler": "default-C32-AS",
+                "archiver": "default-C32-AR",
+                "linker": "default-C32-LD",
+                "coverage": "default-C32-CO",
+                "global": "default-C32Global"
+            }
+        },
+        {
             "name": "default-C32",
             "type": "translator",
             "provider": "microchip.toolchains:xc32-compiler@4.40",
             "properties": {
-                "isolate-each-function": true,
-                "place-data-into-section": true,
-                "optimization-level": "-O1",
-                "pre-instruction-scheduling": "default",
-                "post-instruction-scheduling": "default",
-                "tentative-definitions": "-fno-common",
-                "preprocessor-macros": "HAVE_CONFIG_H;WOLFSSL_IGNORE_FILE_WARN",
+                "additional-warnings": true,
+                "addresss-attribute-use": false,
+                "enable-app-io": false,
+                "enable-omit-frame-pointer": false,
+                "enable-symbols": true,
+                "enable-unroll-loops": false,
+                "exclude-floating-point": false,
                 "extra-include-directories": "../src;../src/config/default;../src/config/default/library;../src/config/default/library/tcpip/src;../src/config/default/library/tcpip/src/common;../src/config/default/system/fs/fat_fs/file_system;../src/config/default/system/fs/fat_fs/hardware_access;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/third_party/wolfssl;../src/third_party/wolfssl/wolfssl",
-                "additional-warnings": true
+                "generate-16-bit-code": false,
+                "generate-micro-compressed-code": false,
+                "isolate-each-function": true,
+                "make-warnings-into-errors": false,
+                "optimization-level": "-O1",
+                "place-data-into-section": true,
+                "post-instruction-scheduling": "default",
+                "pre-instruction-scheduling": "default",
+                "preprocessor-macros": "HAVE_CONFIG_H;WOLFSSL_IGNORE_FILE_WARN",
+                "strict-ansi": false,
+                "support-ansi": false,
+                "tentative-definitions": "-fno-common",
+                "toplevel-reordering": "",
+                "unaligned-access": "",
+                "use-cci": false,
+                "use-iar": false,
+                "use-indirect-calls": false
             }
         },
         {
@@ -52,49 +81,139 @@
             "type": "translator",
             "provider": "microchip.toolchains:xc32-compiler++@4.40",
             "properties": {
+                "additional-warnings": false,
+                "addresss-attribute-use": false,
+                "check-new": false,
+                "eh-specs": true,
+                "enable-app-io": false,
+                "enable-omit-frame-pointer": false,
+                "enable-symbols": true,
+                "enable-unroll-loops": false,
+                "exceptions": true,
+                "exclude-floating-point": false,
+                "extra-include-directories": "../src;../src/config/default;../src/config/default/system/fs/fat_fs/file_system;../src/config/default/system/fs/fat_fs/hardware_access;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include",
+                "generate-16-bit-code": false,
+                "generate-micro-compressed-code": false,
                 "isolate-each-function": true,
+                "make-warnings-into-errors": false,
                 "optimization-level": "-O1",
-                "pre-instruction-scheduling": "default",
+                "place-data-into-section": false,
                 "post-instruction-scheduling": "default",
-                "extra-include-directories": "../src;../src/config/default;../src/config/default/system/fs/fat_fs/file_system;../src/config/default/system/fs/fat_fs/hardware_access;../src/packs/ATSAME54P20A_DFP;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include"
+                "pre-instruction-scheduling": "default",
+                "preprocessor-macros": "",
+                "rtti": true,
+                "strict-ansi": false,
+                "toplevel-reordering": "",
+                "unaligned-access": "",
+                "use-cci": false,
+                "use-iar": false,
+                "use-indirect-calls": false
             }
         },
         {
             "name": "default-C32-AS",
             "type": "translator",
             "provider": "microchip.toolchains:xc32-assembler@4.40",
-            "properties": {}
+            "properties": {
+                "assembler-symbols": "",
+                "enable-symbols": true,
+                "exclude-floating-point-library": false,
+                "expand-macros": false,
+                "extra-include-directories-for-assembler": "",
+                "extra-include-directories-for-preprocessor": "",
+                "false-conditionals": false,
+                "generate-16-bit-code": false,
+                "generate-micro-compressed-code": false,
+                "keep-locals": false,
+                "list-assembly": false,
+                "list-source": false,
+                "list-symbols": false,
+                "oXC32asm-list-to-file": false,
+                "omit-debug-dirs": false,
+                "omit-forms": false,
+                "preprocessor-macros": "",
+                "warning-level": ""
+            }
         },
         {
             "name": "default-C32-AR",
             "type": "translator",
             "provider": "microchip.toolchains:xc32-archiver@4.40",
-            "properties": {}
+            "properties": {
+                "additional-options-chop-files": false
+            }
         },
         {
             "name": "default-C32-LD",
             "type": "translator",
             "provider": "microchip.toolchains:xc32-linker@4.40",
             "properties": {
-                "heap-size": "100000",
-                "remove-unused-sections": true,
-                "no-device-startup-code": true,
+                "additional-options-use-response-files": false,
+                "additional-options-write-sla": false,
+                "allocate-dinit": false,
+                "code-dinit": false,
+                "ebase-addr": "",
+                "enable-check-sections": false,
+                "exclude-floating-point-library": false,
+                "exclude-standard-libraries": false,
+                "extra-lib-directories": "",
+                "fill-flash-options-addr": "",
+                "fill-flash-options-const": "",
+                "fill-flash-options-how": "0",
                 "fill-flash-options-inc-const": "1",
+                "fill-flash-options-increment": "",
+                "fill-flash-options-seq": "",
+                "fill-flash-options-what": "0",
+                "generate-16-bit-code": false,
+                "generate-cross-reference-file": false,
+                "generate-micro-compressed-code": false,
+                "heap-size": "100000",
+                "input-libraries": "",
+                "kseg-length": "",
+                "kseg-origin": "",
+                "linker-symbols": "",
                 "map-file": "",
-                "report-memory-usage": false
+                "no-device-startup-code": true,
+                "no-startup-files": false,
+                "oXC32ld-extra-opts": "",
+                "optimization-level": "",
+                "preprocessor-macros": "",
+                "remove-unused-sections": true,
+                "report-memory-usage": false,
+                "serial-length": "",
+                "serial-origin": "",
+                "stack-size": "",
+                "symbol-stripping": "",
+                "trace-symbols": "",
+                "warn-section-align": false
             }
         },
         {
             "name": "default-C32-CO",
             "type": "translator",
             "provider": "microchip.toolchains:xc32-coverage@4.40",
-            "properties": {}
+            "properties": {
+                "coverage-enable": "",
+                "stack-guidance": false
+            }
         },
         {
             "name": "default-C32Global",
             "type": "translator",
             "provider": "microchip.toolchains:xc32-global@4.40",
-            "properties": {}
+            "properties": {
+                "common-include-directories": "",
+                "gp-relative-option": "",
+                "legacy-libc": false,
+                "mdtcm": "",
+                "mitcm": "",
+                "mstacktcm": false,
+                "omit-pack-options": "1",
+                "relaxed-math": false,
+                "save-temps": false,
+                "stack-smashing": "",
+                "wpo-lto": false
+            }
         },
         {
             "name": "tool-base",
@@ -113,6 +232,9 @@
                 "debugoptions.debug-startup": "Use system settings",
                 "debugoptions.reset-behaviour": "Use system settings",
                 "debugoptions.useswbreakpoints": false,
+                "event.recorder.debugger.behavior": "Running",
+                "event.recorder.enabled": false,
+                "event.recorder.scvd.files": "",
                 "firmware.path": "Press to browse for a specific firmware version",
                 "firmware.toolpack": "Press to select which tool pack to use",
                 "firmware.update.action": "firmware.update.use.latest",
@@ -466,47 +588,6 @@
             "type": "tool",
             "provider": "microchip.tool-*:simulator",
             "properties": {}
-        },
-        {
-            "name": "toolchain",
-            "type": "toolchain",
-            "provider": "microchip.toolchains:xc32-toolchain@4.40",
-            "properties": {
-                "assembler": "assembler",
-                "compiler": "compiler",
-                "compiler++": "compiler++",
-                "linker": "linker"
-            }
-        },
-        {
-            "name": "assembler",
-            "type": "translator",
-            "provider": "microchip.toolchains:xc32-assembler@4.40",
-            "properties": {}
-        },
-        {
-            "name": "compiler",
-            "type": "translator",
-            "provider": "microchip.toolchains:xc32-compiler@4.40",
-            "properties": {
-                "isolate-each-function": true,
-                "place-data-into-section": true
-            }
-        },
-        {
-            "name": "compiler++",
-            "type": "translator",
-            "provider": "microchip.toolchains:xc32-compiler++@4.40",
-            "properties": {}
-        },
-        {
-            "name": "linker",
-            "type": "translator",
-            "provider": "microchip.toolchains:xc32-linker@4.40",
-            "properties": {
-                "heap-size": "100000",
-                "remove-unused-sections": true
-            }
         }
     ],
     "fileSets": [
@@ -514,9 +595,9 @@
             "name": "root",
             "contains": [
                 "Header Files",
+                "Important Files",
                 "Linker Files",
-                "Source Files",
-                "Important Files"
+                "Source Files"
             ]
         },
         {
@@ -1385,6 +1466,134 @@
             "encoding": "ISO-8859-1"
         },
         {
+            "name": "Important Files",
+            "contains": [
+                "default.mhc",
+                "wolfcrypt_2"
+            ],
+            "files": [
+                "Makefile",
+                "../src/config/default/harmony-manifest-success.yml",
+                "same54_cu_tcpip.mc3"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "default.mhc",
+            "contains": [
+                "TCP_IP_STACK"
+            ],
+            "files": [
+                "../src/config/default/default.mhc/cmsis.yml",
+                "../src/config/default/default.mhc/core.yml",
+                "../src/config/default/default.mhc/dfp.yml",
+                "../src/config/default/default.mhc/drv_sdmmc.yml",
+                "../src/config/default/default.mhc/evsys.yml",
+                "../src/config/default/default.mhc/GraphSettings.yml",
+                "../src/config/default/default.mhc/HarmonyCore.yml",
+                "../src/config/default/default.mhc/lib_crypto.yml",
+                "../src/config/default/default.mhc/lib_wolfcrypt.yml",
+                "../src/config/default/default.mhc/nvmctrl.yml",
+                "../src/config/default/default.mhc/project.yml",
+                "../src/config/default/default.mhc/sdhc1.yml",
+                "../src/config/default/default.mhc/sercom1.yml",
+                "../src/config/default/default.mhc/settings.yml",
+                "../src/config/default/default.mhc/sys_command.yml",
+                "../src/config/default/default.mhc/sys_console.yml",
+                "../src/config/default/default.mhc/sys_debug.yml",
+                "../src/config/default/default.mhc/sys_fs.yml",
+                "../src/config/default/default.mhc/sys_time.yml",
+                "../src/config/default/default.mhc/tc0.yml"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "TCP_IP_STACK",
+            "contains": [
+                "APPLICATION_LAYER",
+                "BASIC_CONFIGURATION",
+                "DRIVER_LAYER",
+                "NETWORK_LAYER",
+                "PRESENTATION_LAYER",
+                "TRANSPORT_LAYER"
+            ],
+            "files": [
+                "../src/config/default/default.mhc/TCP_IP_STACK/TCP_IP_STACK.yml"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "APPLICATION_LAYER",
+            "files": [
+                "../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/APPLICATION_LAYER.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipAnnounce.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipBerkeleyApi.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipDns.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipFtps.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipIperf.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpip_apps_config.yml"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "BASIC_CONFIGURATION",
+            "files": [
+                "../src/config/default/default.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/BASIC_CONFIGURATION.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/drvExtPhyKsz8061.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/drvGmac.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/drvMiim.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpipNetConfig.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpipStack.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpip_basic_config.yml"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "DRIVER_LAYER",
+            "files": [
+                "../src/config/default/default.mhc/TCP_IP_STACK/DRIVER_LAYER/DRIVER_LAYER.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/DRIVER_LAYER/tcpip_driver_config.yml"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "NETWORK_LAYER",
+            "files": [
+                "../src/config/default/default.mhc/TCP_IP_STACK/NETWORK_LAYER/NETWORK_LAYER.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipArp.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipIcmp.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipIPv4.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpip_network_config.yml"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "PRESENTATION_LAYER",
+            "files": [
+                "../src/config/default/default.mhc/TCP_IP_STACK/PRESENTATION_LAYER/net_Pres.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/PRESENTATION_LAYER/PRESENTATION_LAYER.yml"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "TRANSPORT_LAYER",
+            "files": [
+                "../src/config/default/default.mhc/TCP_IP_STACK/TRANSPORT_LAYER/tcpipTcp.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/TRANSPORT_LAYER/tcpipUdp.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/TRANSPORT_LAYER/tcpip_transport_config.yml",
+                "../src/config/default/default.mhc/TCP_IP_STACK/TRANSPORT_LAYER/TRANSPORT_LAYER.yml"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "wolfcrypt_2",
+            "files": [
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/misc.c",
+                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/evp.c"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
             "name": "Linker Files",
             "contains": [
                 "config_2"
@@ -1408,7 +1617,7 @@
             "name": "Source Files",
             "contains": [
                 "config_3",
-                "wolfcrypt_2"
+                "wolfcrypt_3"
             ],
             "files": [
                 "../src/main.c",
@@ -1798,7 +2007,7 @@
             "encoding": "ISO-8859-1"
         },
         {
-            "name": "wolfcrypt_2",
+            "name": "wolfcrypt_3",
             "contains": [
                 "port_4"
             ],
@@ -1900,135 +2109,6 @@
                 "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha512_sam6156.c",
                 "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_tdes_sam6150.c",
                 "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_wolfcryptcb.c"
-            ],
-            "encoding": "ISO-8859-1"
-        },
-        {
-            "name": "Important Files",
-            "contains": [
-                "default.mhc",
-                "wolfcrypt_3"
-            ],
-            "files": [
-                "Makefile",
-                "../src/config/default/pin_configurations.csv",
-                "../src/config/default/harmony-manifest-success.yml",
-                "same54_cu_tcpip.mc3"
-            ],
-            "encoding": "ISO-8859-1"
-        },
-        {
-            "name": "default.mhc",
-            "contains": [
-                "TCP_IP_STACK"
-            ],
-            "files": [
-                "../src/config/default/default.mhc/cmsis.yml",
-                "../src/config/default/default.mhc/core.yml",
-                "../src/config/default/default.mhc/dfp.yml",
-                "../src/config/default/default.mhc/drv_sdmmc.yml",
-                "../src/config/default/default.mhc/evsys.yml",
-                "../src/config/default/default.mhc/GraphSettings.yml",
-                "../src/config/default/default.mhc/HarmonyCore.yml",
-                "../src/config/default/default.mhc/lib_crypto.yml",
-                "../src/config/default/default.mhc/lib_wolfcrypt.yml",
-                "../src/config/default/default.mhc/nvmctrl.yml",
-                "../src/config/default/default.mhc/project.yml",
-                "../src/config/default/default.mhc/sdhc1.yml",
-                "../src/config/default/default.mhc/sercom1.yml",
-                "../src/config/default/default.mhc/settings.yml",
-                "../src/config/default/default.mhc/sys_command.yml",
-                "../src/config/default/default.mhc/sys_console.yml",
-                "../src/config/default/default.mhc/sys_debug.yml",
-                "../src/config/default/default.mhc/sys_fs.yml",
-                "../src/config/default/default.mhc/sys_time.yml",
-                "../src/config/default/default.mhc/tc0.yml"
-            ],
-            "encoding": "ISO-8859-1"
-        },
-        {
-            "name": "TCP_IP_STACK",
-            "contains": [
-                "APPLICATION_LAYER",
-                "BASIC_CONFIGURATION",
-                "DRIVER_LAYER",
-                "NETWORK_LAYER",
-                "PRESENTATION_LAYER",
-                "TRANSPORT_LAYER"
-            ],
-            "files": [
-                "../src/config/default/default.mhc/TCP_IP_STACK/TCP_IP_STACK.yml"
-            ],
-            "encoding": "ISO-8859-1"
-        },
-        {
-            "name": "APPLICATION_LAYER",
-            "files": [
-                "../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/APPLICATION_LAYER.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipAnnounce.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipBerkeleyApi.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipDns.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipFtps.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpipIperf.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/APPLICATION_LAYER/tcpip_apps_config.yml"
-            ],
-            "encoding": "ISO-8859-1"
-        },
-        {
-            "name": "BASIC_CONFIGURATION",
-            "files": [
-                "../src/config/default/default.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/BASIC_CONFIGURATION.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/drvExtPhyKsz8061.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/drvGmac.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/drvMiim.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpipNetConfig.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpipStack.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/BASIC_CONFIGURATION/tcpip_basic_config.yml"
-            ],
-            "encoding": "ISO-8859-1"
-        },
-        {
-            "name": "DRIVER_LAYER",
-            "files": [
-                "../src/config/default/default.mhc/TCP_IP_STACK/DRIVER_LAYER/DRIVER_LAYER.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/DRIVER_LAYER/tcpip_driver_config.yml"
-            ],
-            "encoding": "ISO-8859-1"
-        },
-        {
-            "name": "NETWORK_LAYER",
-            "files": [
-                "../src/config/default/default.mhc/TCP_IP_STACK/NETWORK_LAYER/NETWORK_LAYER.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipArp.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipIcmp.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpipIPv4.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/NETWORK_LAYER/tcpip_network_config.yml"
-            ],
-            "encoding": "ISO-8859-1"
-        },
-        {
-            "name": "PRESENTATION_LAYER",
-            "files": [
-                "../src/config/default/default.mhc/TCP_IP_STACK/PRESENTATION_LAYER/net_Pres.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/PRESENTATION_LAYER/PRESENTATION_LAYER.yml"
-            ],
-            "encoding": "ISO-8859-1"
-        },
-        {
-            "name": "TRANSPORT_LAYER",
-            "files": [
-                "../src/config/default/default.mhc/TCP_IP_STACK/TRANSPORT_LAYER/tcpipTcp.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/TRANSPORT_LAYER/tcpipUdp.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/TRANSPORT_LAYER/tcpip_transport_config.yml",
-                "../src/config/default/default.mhc/TCP_IP_STACK/TRANSPORT_LAYER/TRANSPORT_LAYER.yml"
-            ],
-            "encoding": "ISO-8859-1"
-        },
-        {
-            "name": "wolfcrypt_3",
-            "files": [
-                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/misc.c",
-                "../src/third_party/wolfssl/wolfssl/wolfcrypt/src/evp.c"
             ],
             "encoding": "ISO-8859-1"
         }

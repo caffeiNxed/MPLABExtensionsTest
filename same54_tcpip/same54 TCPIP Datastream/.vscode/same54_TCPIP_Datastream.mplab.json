@@ -1,0 +1,49 @@
+{
+    "version": "1.0",
+    "configurations": [
+        {
+            "name": "default",
+            "id": "conf1",
+            "targetDevice": "ATSAME54P20A",
+            "packs": [
+                {
+                    "name": "SAME54_DFP",
+                    "vendor": "Microchip",
+                    "version": "3.7.122"
+                },
+                {
+                    "name": "CMSIS",
+                    "vendor": "ARM",
+                    "version": "5.8.0"
+                }
+            ],
+            "fileSet": "default",
+            "outputFiles": [
+                {
+                    "name": "build",
+                    "toolchain": "default-XC32",
+                    "imagePath": "./out/same54_TCPIP_Datastream/default.elf"
+                }
+            ]
+        }
+    ],
+    "propertyGroups": [
+        {
+            "name": "default-XC32",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32-toolchain@4.40",
+            "properties": {
+                "toolchainName": "XC32",
+                "toolchainVersion": "4.40"
+            }
+        }
+    ],
+    "fileSets": [
+        {
+            "name": "default",
+            "files": [
+                "main.c"
+            ]
+        }
+    ]
+}

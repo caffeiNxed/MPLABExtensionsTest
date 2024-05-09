@@ -1,0 +1,5 @@
+C:/Users/A69614/Documents/MPLABExtensionsTest/same54cu_tcp_datastream/same54_cu_tcpip/firmware/same54_cu_tcpip.X/_build_default/CMakeFiles/project_c.dir
+C:/Users/A69614/Documents/MPLABExtensionsTest/same54cu_tcp_datastream/same54_cu_tcpip/firmware/same54_cu_tcpip.X/_build_default/CMakeFiles/default.elf.dir
+C:/Users/A69614/Documents/MPLABExtensionsTest/same54cu_tcp_datastream/same54_cu_tcpip/firmware/same54_cu_tcpip.X/_build_default/CMakeFiles/Bin2Hex.dir
+C:/Users/A69614/Documents/MPLABExtensionsTest/same54cu_tcp_datastream/same54_cu_tcpip/firmware/same54_cu_tcpip.X/_build_default/CMakeFiles/edit_cache.dir
+C:/Users/A69614/Documents/MPLABExtensionsTest/same54cu_tcp_datastream/same54_cu_tcpip/firmware/same54_cu_tcpip.X/_build_default/CMakeFiles/rebuild_cache.dir

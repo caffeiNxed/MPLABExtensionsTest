@@ -1,7 +1,0 @@
-{
-    "cmake.configureOnOpen": true,
-    "clangd.path": "/home/test/.vscode/extensions/microchip.runcmake-0.1.3/lsp/cd5a65449c5a2e38cee5c2dbc9977251871ac96cfb146d40a85791c75a736a94_linux-xc32-clangd",
-    "clangd.arguments": [
-        "--compile-commands-dir=/home/test/MPLABProjects/same54cu_tcp_datastream/same54_cu_tcpip/firmware/same54_cu_tcpip.X/_build_mplab/same54_cu_tcpip/default/image_default.elf"
-    ]
-}
